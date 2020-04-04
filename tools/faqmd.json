@@ -1,0 +1,106 @@
+[
+  {
+    "title": "About Covid Act Now",
+    "children": [
+      {
+        "title": "What is Covid Act Now?",
+        "children": "Covid Act Now was started by four volunteers who saw the explosive and deadly growth of COVID infections around the world and felt they had to do something. The Covid Act Now team has partnered with some of America’s preeminent epidemiologists and data scientists to develop the U.S. Intervention Model.\n\nThe U.S. Intervention Model is a data platform that projects COVID infections, hospitalizations, and deaths across the United States, as well as model how public health interventions contain the spread of COVID. We help decision makers understand when and how COVID will affect their communities in order to make better decisions that save lives.\n\nOur U.S. Intervention Model is being used at every level of government across the U.S., the military, private sector, and more. The model has also been used by several countries around the world, including India."
+      },
+      {
+        "title": "Who made Covid Act Now?",
+        "children": "Covid Act Now is a distributed team of volunteers working with some of the nation’s preeminent epidemiologists and public health experts. CoVidActNow was founded by [Max Henderson](https://www.linkedin.com/in/maxhenderson/), [Rep Jonathan Kreiss-Tomkins](https://en.wikipedia.org/wiki/Jonathan_Kreiss-Tomkins), [Igor Kofman](https://twitter.com/igorkofman), and [Zack Rosen](https://www.linkedin.com/in/zacharyrosen/), with medical and policy guidance from [Dr. Nirav Shah](https://profiles.stanford.edu/nirav-shah).\n\nWe have since grown into a large distributed team:\n\n*   [Max Henderson](https://www.linkedin.com/in/maxhenderson/), Ex-Firebase/Google Data Science & Product Leader\n*   [Igor Kofman](https://twitter.com/igorkofman), Ex-CTO, Dropbox Paper\n*   [Representative Jonathan Kreiss-Tomkins](https://en.wikipedia.org/wiki/Jonathan_Kreiss-Tomkins), Alaska Legislator\n*   [Professor Rebecca Katz, Ph.D., MPH](https://www.linkedin.com/in/rebecca-katz-43a04a5/), Director of the Center for Global Health Science and Security, Georgetown University\n*   [Dr. Nirav Shah, MD, MPH](https://profiles.stanford.edu/nirav-shah), Senior Scholar, Stanford University Clinical Excellence Research Center\n*   [Ellie Graeden, Ph.D.](https://www.linkedin.com/in/egraeden/), CEO, Talus Analytics; Affiliate and Adjunct, Georgetown University Center for Global Health Science and Security\n*   [James Tamplin](https://www.linkedin.com/in/jamest/), Founder/CEO, Firebase\n*   [Zack Rosen](https://www.linkedin.com/in/zacharyrosen/), CEO, Pantheon\n*   [Stephen Fiskell](https://www.linkedin.com/in/takemoreaction/), Founder, Commonbook.me\n*   [Zack Rosen](https://www.linkedin.com/in/zack-rosen-a03abb3a/), Engineering Lead, Stitch Labs\n*   [David Strauss](https://twitter.com/davidstrauss?lang=en), CTO, Pantheon\n*   [Ali Berlin Johnson](https://www.linkedin.com/in/berlinjohnson/), Former Lead Designer, Firebase\n*   [Misha Chellam](https://www.linkedin.com/in/mishachellam/), Council on Society & Technology\n*   [Jacob Redding](https://www.linkedin.com/in/jacobredding/), Senior Principal, Accenture\n*   [Joseph Ensminger](https://www.linkedin.com/in/josephensminger/), Founder, J.E. Consulting\n*   [Simon Frid](https://www.linkedin.com/in/simonfrid/), Founder, Fridiculous Ventures\n*   [Virsaviya Efraim](https://www.linkedin.com/in/virsaviyaefraim/), Software Engineer, Almanac\n*   [Adnan Pirzada](https://www.linkedin.com/in/adpirz/), Software Engineer, Lattice\n*   [Rachel RoseFigura](https://www.linkedin.com/in/rachelrosefigura/), Software Engineer, Uber\n*   [Dani Fontanesi](https://www.linkedin.com/in/dani-fontanesi-esq-26509a8/), Former Associate General Counsel of an Andreessen Horowitz tech company\n*   [Jess Schwartz](https://www.linkedin.com/in/jessicajschwartz/), Lead Program Manager, Google\n*   [Trae Wallace](https://www.linkedin.com/in/traewallace/), Head of Data, Talus Analytics\n*   [Chris Wilcox](https://www.linkedin.com/in/chrisrwilcox/), Senior Engineer, Google\n*   [Michael Lehenbauer](https://www.linkedin.com/in/mikelehen/), Former Software Engineer, Google\n*   [Chris Kelly](https://www.linkedin.com/in/ckelly90/), Software Engineer, Fritz\n*   [Vincent Woo](https://www.linkedin.com/in/vincent-woo-b2716399/), Founder, CoderPad\n*   [Jeremy Lubin](https://www.linkedin.com/in/jeremy-lubin/), Former Lead Designer, Square\n*   [Mike McDonald](https://www.linkedin.com/in/asciimike/), Head of Product, Stedi\n*   [Rebecca Mark](https://www.linkedin.com/in/rebeccamark/), Former Head of Public Affairs and Policy, Cruise\n*   [Audra Grassia](https://www.linkedin.com/in/audragrassia/), Former Senior Director, ACRONYM\n*   [Bradley Lautenbach](https://www.linkedin.com/in/lautenbach/), Vice President, Marriott\n*   [Laurent Crenshaw](https://www.linkedin.com/in/laurentcrenshaw/), Director of Public Policy, Yelp\n*   [Anya Lehr](https://www.linkedin.com/in/anyalehr/), Former Director of Operations, Vice Media\n*   [Debbie Lai](https://www.linkedin.com/in/iamdlai/), Former Strategic Partnerships Manager, Google\n*   [Hannah Lee](https://www.linkedin.com/in/hannahbnguyen/), Former Operations Manager, Google\n*   [Brittany Braxton](https://www.linkedin.com/in/brittany-braxton-39187549/), Executive Business Partner, Pantheon\n*   [Shaeleigh Jacobs](https://www.linkedin.com/in/shaeleigh-jacobs-672152114/), Principal Research Investigator, Austin Paey University\n*   [David Duran](https://www.linkedin.com/in/davidduran971/), Product Operations Analyst, Google\n*   [Vincent DeGennaro, MD](https://www.linkedin.com/in/vincent-degennaro-jr-3b234ba3/), Founder, Innovating Health International\n*   [Susan Goldblatt](https://www.linkedin.com/in/susan-goldblatt/), Former Software Engineer, Google\n*   [Abe Haskins](https://www.linkedin.com/in/abe-haskins-1a267a13/), Developer Programs Engineer, Google\n*   [Eusden Shing](https://www.linkedin.com/in/eusden/), Former Head of Product, Pinterest\n*   [Dan Schlosser](https://www.linkedin.com/in/danrschlosser/), Senior Product Manager, The New York Times\n*   [Mikayla O'Bryan](https://www.linkedin.com/in/mikayla-o-bryan-867087135/),\n*   [Doug Pan](https://www.linkedin.com/in/dougspan/),"
+      },
+      {
+        "title": "Who supports, endorses or validates your work?",
+        "children": "Our work has been [validated and endorsed](https://covidactnow.org/endorsements) by a number of experts in epidemiology, public health, and medicine."
+      },
+      {
+        "title": "Why did we build it?",
+        "children": "We built covidactnow.org to [solve an urgent problem:](https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca) If we try to fight COVID in the present we will lose. We can only beat COVID by understanding what it will do in the future. Our leaders need a forecasting tool to better understand the future spread of COVID. We are building that tool."
+      },
+      {
+        "title": "Who are you collaborating with?",
+        "children": "We endorse [Private Kit: Safe Paths](https://safepaths.mit.edu), a project developed by MIT, Mayo Clinic, WHO, and others. Private Kit is a contact tracing app that notifies someone if they have come in contact with someone who later tests positive for COVID while protecting individual privacy.\n\n*   Read [\"Apps Gone Rogue: Maintaining Personal Privacy in an Epidemic\"](https://arxiv.org/pdf/2003.08567.pdf)\n*   Download the app on [Google Play](https://play.google.com/store/apps/details?id=edu.mit.privatekit) or [Apple Store](https://apps.apple.com/us/app/private-kit/id1501903733)"
+      },
+      {
+        "title": "Can I contribute or help?",
+        "children": "Yes. To improve the tool, we need the help of:\n\n*   JavaScript/React, Python engineers\n*   Data Visualization Experts\n*   UX Designer (Bonus if you write code!)\n*   Epidimiologist / Modeler\n*   Engineering Manager\n\nIs this you? [Let us know](https://docs.google.com/forms/d/e/1FAIpQLSfQkdwXsbDbwLHhWwBD6wzNiw54_0P6A60r8hujP3qnaxxFkA/viewform)"
+      },
+      {
+        "title": "How do I contact you?",
+        "children": "*   Are you in healthcare? [medical@covidactnow.org](mailto:medical@covidactnow.org)\n*   Are you in government? [gov@covidactnow.org](mailto:gov@covidactnow.org)\n*   Are you a journalist? [press@covidactnow.org](mailto:press@covidactnow.org)\n*   Anyone and everything else: [info@covidactnow.org](mailto:info@covidactnow.org)\n*   Do you want to contribute to Covid Act Now in other ways? [Let us know](https://docs.google.com/forms/d/e/1FAIpQLSfQkdwXsbDbwLHhWwBD6wzNiw54_0P6A60r8hujP3qnaxxFkA/viewform)"
+      }
+    ]
+  },
+  {
+    "title": "About the U.S. Intervention Model",
+    "children": [
+      {
+        "title": "What is the U.S. Intervention Model?",
+        "children": "The U.S. Intervention Model is a data platform that projects COVID infections, hospitalizations, and deaths across the United States, as well as model how public health interventions contain the spread of COVID and save lives."
+      },
+      {
+        "title": "Can I view the model?",
+        "children": "[Yes, the model is public](https://github.com/covid-projections/covid-data-model)."
+      },
+      {
+        "title": "What are your sources of data?",
+        "children": "Reference materials, including assumptions, logic, and definitions [are available here](https://data.covidactnow.org/Covid_Act_Now_Model_References_and_Assumptions.pdf)."
+      },
+      {
+        "title": "How often does the model update?",
+        "children": "The model updates every 24 hours."
+      },
+      {
+        "title": "When was the last update?",
+        "children": "See the \"last updated\" date stamp on the state page."
+      },
+      {
+        "title": "What are the current limitations of the model?",
+        "children": "A non-exhaustive list:\n\n*   Only a small fraction of the world has been infected. It’s a new disease. Variables will change.\n*   R0s ([R0 is a fundamental epidemiological metric](https://en.wikipedia.org/wiki/Basic_reproduction_number)) for interventions are guesses, in some cases informed by data. There is no historical precedent for what is going on right now to draw from.\n*   The default R0 used in this model is an average. The model does not adjust for the population density, culturally-determined interaction frequency and closeness, humidity, etc. in calculating R0.\n*   This is not a node-based analysis and thus assumes everyone spreads the disease at the same rate. In practice, there are some folks who are “super-spreaders,” and others who are almost isolated. Interventions should be targeted primarily at those most likely to spread the disease.\n*   Only hospital beds in aggregate are considered. ICU beds and ventilators, which are likely to run low before beds, are not considered.\n*   Demographics, populations, and hospital bed count data are outdated. Demographics for the U.S. as a whole are used, rather than specific to each state.\n*   In containment cases, we do not consider the longer-term impacts of maintaining containment; primarily, the reintroduction of COVID through travel. 14-day mandatory border quarantines, such as those currently in place in China, would likely need to be implemented until a vaccine or therapeutic is developed."
+      },
+      {
+        "title": "What definition does Covid Act Now use for “social distancing” and “stay at home”? How about “poor/strict compliance” (re. “stay at home”)?",
+        "children": "All these definitions — and much more — can be found in our [Model Reference and Assumptions](https://data.covidactnow.org/Covid_Act_Now_Model_References_and_Assumptions.pdf) document."
+      },
+      {
+        "title": "What are the specific policies for my state?",
+        "children": "_The New York Times_ lists [every state's policies](https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html)."
+      }
+    ]
+  },
+  {
+    "title": "About COVID",
+    "children": [
+      {
+        "title": "What are the symptoms of COVID?",
+        "children": "The CDC has a list of [COVID symptoms](https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html)."
+      },
+      {
+        "title": "Where/how should I get tested?",
+        "children": "The CDC has additional information on [when and how to get tested](https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html)."
+      },
+      {
+        "title": "What should I do if I think I am sick?",
+        "children": "The CDC provides advice on [what to do if you think you are sick](https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html)."
+      },
+      {
+        "title": "Where can I get more information about COVID?",
+        "children": "The CDC has additional information on [COVID](https://www.cdc.gov/coronavirus/2019-ncov/index.html)."
+      },
+      {
+        "title": "Should I wear a mask in public?",
+        "children": "The WHO offers [advice](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks) on the use of face masks, though there seems to be [an emerging body of thought and evidence](https://www.washingtonpost.com/outlook/2020/03/28/masks-all-coronavirus/) that masks should be worn by everyone."
+      }
+    ]
+  },
+  {
+    "title": "Other questions",
+    "children": [
+      {
+        "title": "When will I get my stimulus check?",
+        "children": "Please visit the [IRS’s page on stimulus checks](https://www.irs.gov/coronavirus) for more info, though this (from the IRS) is the takeaway for many folks: “The distribution of economic impact payments will begin in the next three weeks and will be distributed automatically, with no action required for most people.” ."
+      }
+    ]
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "title": "About Covid Act Now",
+    "children": [
+      {
+        "title": "What is Covid Act Now?",
+        "children": [
+          "Covid Act Now was started by four volunteers who saw the explosive and deadly growth of COVID infections around the world and felt they had to do something. The Covid Act Now team has partnered with some of America’s preeminent epidemiologists and data scientists to develop the U.S. Intervention Model.",
+          "The U.S. Intervention Model is a data platform that projects COVID infections, hospitalizations, and deaths across the United States, as well as model how public health interventions contain the spread of COVID. We help decision makers understand when and how COVID will affect their communities in order to make better decisions that save lives.",
+          "Our U.S. Intervention Model is being used at every level of government across the U.S., the military, private sector, and more. The model has also been used by several countries around the world, including India."
+        ]
+      },
+      {
+        "title": "Who made Covid Act Now?",
+        "children": [
+          "Covid Act Now is a distributed team of volunteers working with some of the nation’s preeminent epidemiologists and public health experts. CoVidActNow was founded by <a href=\"https://www.linkedin.com/in/maxhenderson/\">Max Henderson</a>, <a href=\"https://en.wikipedia.org/wiki/Jonathan_Kreiss-Tomkins\">Rep Jonathan Kreiss-Tomkins</a>, <a href=\"https://twitter.com/igorkofman\">Igor Kofman</a>, and <a href=\"https://www.linkedin.com/in/zacharyrosen/\">Zack Rosen</a>, with medical and policy guidance from <a href=\"https://profiles.stanford.edu/nirav-shah\">Dr. Nirav Shah</a>.",
+          "We have since grown into a large distributed team:",
+          "<ul><li><a href=\"https://www.linkedin.com/in/maxhenderson/\" target=\"_blank\" rel=\"noopener noreferrer\">Max Henderson</a>, Ex-Firebase/Google Data Science &amp; Product Leader</li><li><a href=\"https://twitter.com/igorkofman\" target=\"_blank\" rel=\"noopener noreferrer\">Igor Kofman</a>, Ex-CTO, Dropbox Paper</li><li><a href=\"https://en.wikipedia.org/wiki/Jonathan_Kreiss-Tomkins\" target=\"_blank\" rel=\"noopener noreferrer\">Representative Jonathan Kreiss-Tomkins</a>, Alaska Legislator</li><li><a href=\"https://www.linkedin.com/in/rebecca-katz-43a04a5/\" target=\"_blank\" rel=\"noopener noreferrer\">Professor Rebecca Katz, Ph.D., MPH</a>, Director of the Center for Global Health Science and Security, Georgetown University</li><li><a href=\"https://profiles.stanford.edu/nirav-shah\" target=\"_blank\" rel=\"noopener noreferrer\">Dr. Nirav Shah, MD, MPH</a>, Senior Scholar, Stanford University Clinical Excellence Research Center</li><li><a href=\"https://www.linkedin.com/in/egraeden/\" target=\"_blank\" rel=\"noopener noreferrer\">Ellie Graeden, Ph.D.</a>, CEO, Talus Analytics; Affiliate and Adjunct, Georgetown University Center for Global Health Science and Security</li><li><a href=\"https://www.linkedin.com/in/jamest/\" target=\"_blank\" rel=\"noopener noreferrer\">James Tamplin</a>, Founder/CEO, Firebase</li><li><a href=\"https://www.linkedin.com/in/zacharyrosen/\" target=\"_blank\" rel=\"noopener noreferrer\">Zack Rosen</a>, CEO, Pantheon</li><li><a href=\"https://www.linkedin.com/in/takemoreaction/\" target=\"_blank\" rel=\"noopener noreferrer\">Stephen Fiskell</a>, Founder, Commonbook.me</li><li><a href=\"https://www.linkedin.com/in/zack-rosen-a03abb3a/\" target=\"_blank\" rel=\"noopener noreferrer\">Zack Rosen</a>, Engineering Lead, Stitch Labs</li><li><a href=\"https://twitter.com/davidstrauss?lang=en\" target=\"_blank\" rel=\"noopener noreferrer\">David Strauss</a>, CTO, Pantheon</li><li><a href=\"https://www.linkedin.com/in/berlinjohnson/\" target=\"_blank\" rel=\"noopener noreferrer\">Ali Berlin Johnson</a>, Former Lead Designer, Firebase</li><li><a href=\"https://www.linkedin.com/in/mishachellam/\" target=\"_blank\" rel=\"noopener noreferrer\">Misha Chellam</a>, Council on Society &amp; Technology</li><li><a href=\"https://www.linkedin.com/in/jacobredding/\" target=\"_blank\" rel=\"noopener noreferrer\">Jacob Redding</a>, Senior Principal, Accenture</li><li><a href=\"https://www.linkedin.com/in/josephensminger/\" target=\"_blank\" rel=\"noopener noreferrer\">Joseph Ensminger</a>, Founder, J.E. Consulting</li><li><a href=\"https://www.linkedin.com/in/simonfrid/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Frid</a>, Founder, Fridiculous Ventures</li><li><a href=\"https://www.linkedin.com/in/virsaviyaefraim/\" target=\"_blank\" rel=\"noopener noreferrer\">Virsaviya Efraim</a>, Software Engineer, Almanac</li><li><a href=\"https://www.linkedin.com/in/adpirz/\" target=\"_blank\" rel=\"noopener noreferrer\">Adnan Pirzada</a>, Software Engineer, Lattice</li><li><a href=\"https://www.linkedin.com/in/rachelrosefigura/\" target=\"_blank\" rel=\"noopener noreferrer\">Rachel RoseFigura</a>, Software Engineer, Uber</li><li><a href=\"https://www.linkedin.com/in/dani-fontanesi-esq-26509a8/\" target=\"_blank\" rel=\"noopener noreferrer\">Dani Fontanesi</a>, Former Associate General Counsel of an Andreessen Horowitz tech company</li><li><a href=\"https://www.linkedin.com/in/jessicajschwartz/\" target=\"_blank\" rel=\"noopener noreferrer\">Jess Schwartz</a>, Lead Program Manager, Google</li><li><a href=\"https://www.linkedin.com/in/traewallace/\" target=\"_blank\" rel=\"noopener noreferrer\">Trae Wallace</a>, Head of Data, Talus Analytics</li><li><a href=\"https://www.linkedin.com/in/chrisrwilcox/\" target=\"_blank\" rel=\"noopener noreferrer\">Chris Wilcox</a>, Senior Engineer, Google</li><li><a href=\"https://www.linkedin.com/in/mikelehen/\" target=\"_blank\" rel=\"noopener noreferrer\">Michael Lehenbauer</a>, Former Software Engineer, Google</li><li><a href=\"https://www.linkedin.com/in/ckelly90/\" target=\"_blank\" rel=\"noopener noreferrer\">Chris Kelly</a>, Software Engineer, Fritz</li><li><a href=\"https://www.linkedin.com/in/vincent-woo-b2716399/\" target=\"_blank\" rel=\"noopener noreferrer\">Vincent Woo</a>, Founder, CoderPad</li><li><a href=\"https://www.linkedin.com/in/jeremy-lubin/\" target=\"_blank\" rel=\"noopener noreferrer\">Jeremy Lubin</a>, Former Lead Designer, Square</li><li><a href=\"https://www.linkedin.com/in/asciimike/\" target=\"_blank\" rel=\"noopener noreferrer\">Mike McDonald</a>, Head of Product, Stedi</li><li><a href=\"https://www.linkedin.com/in/rebeccamark/\" target=\"_blank\" rel=\"noopener noreferrer\">Rebecca Mark</a>, Former Head of Public Affairs and Policy, Cruise</li><li><a href=\"https://www.linkedin.com/in/audragrassia/\" target=\"_blank\" rel=\"noopener noreferrer\">Audra Grassia</a>, Former Senior Director, ACRONYM</li><li><a href=\"https://www.linkedin.com/in/lautenbach/\" target=\"_blank\" rel=\"noopener noreferrer\">Bradley Lautenbach</a>, Vice President, Marriott</li><li><a href=\"https://www.linkedin.com/in/laurentcrenshaw/\" target=\"_blank\" rel=\"noopener noreferrer\">Laurent Crenshaw</a>, Director of Public Policy, Yelp</li><li><a href=\"https://www.linkedin.com/in/anyalehr/\" target=\"_blank\" rel=\"noopener noreferrer\">Anya Lehr</a>, Former Director of Operations, Vice Media</li><li><a href=\"https://www.linkedin.com/in/iamdlai/\" target=\"_blank\" rel=\"noopener noreferrer\">Debbie Lai</a>, Former Strategic Partnerships Manager, Google</li><li><a href=\"https://www.linkedin.com/in/hannahbnguyen/\" target=\"_blank\" rel=\"noopener noreferrer\">Hannah Lee</a>, Former Operations Manager, Google</li><li><a href=\"https://www.linkedin.com/in/brittany-braxton-39187549/\" target=\"_blank\" rel=\"noopener noreferrer\">Brittany Braxton</a>, Executive Business Partner, Pantheon</li><li><a href=\"https://www.linkedin.com/in/shaeleigh-jacobs-672152114/\" target=\"_blank\" rel=\"noopener noreferrer\">Shaeleigh Jacobs</a>, Principal Research Investigator, Austin Paey University</li><li><a href=\"https://www.linkedin.com/in/davidduran971/\" target=\"_blank\" rel=\"noopener noreferrer\">David Duran</a>, Product Operations Analyst, Google</li><li><a href=\"https://www.linkedin.com/in/vincent-degennaro-jr-3b234ba3/\" target=\"_blank\" rel=\"noopener noreferrer\">Vincent DeGennaro, MD</a>, Founder, Innovating Health International</li><li><a href=\"https://www.linkedin.com/in/susan-goldblatt/\" target=\"_blank\" rel=\"noopener noreferrer\">Susan Goldblatt</a>, Former Software Engineer, Google</li><li><a href=\"https://www.linkedin.com/in/abe-haskins-1a267a13/\" target=\"_blank\" rel=\"noopener noreferrer\">Abe Haskins</a>, Developer Programs Engineer, Google</li><li><a href=\"https://www.linkedin.com/in/eusden/\" target=\"_blank\" rel=\"noopener noreferrer\">Eusden Shing</a>, Former Head of Product, Pinterest</li><li><a href=\"https://www.linkedin.com/in/danrschlosser/\" target=\"_blank\" rel=\"noopener noreferrer\">Dan Schlosser</a>, Senior Product Manager, The New York Times</li><li><a href=\"https://www.linkedin.com/in/mikayla-o-bryan-867087135/\" target=\"_blank\" rel=\"noopener noreferrer\">Mikayla O'Bryan</a>, </li><li><a href=\"https://www.linkedin.com/in/dougspan/\" target=\"_blank\" rel=\"noopener noreferrer\">Doug Pan</a>, </li></ul>"
+        ]
+      },
+      {
+        "title": "Who supports, endorses or validates your work?",
+        "children": [
+          "Our work has been <a href=\"https://covidactnow.org/endorsements\" target=\"_blank\" rel=\"noopener noreferrer\">validated and endorsed</a> by a number of experts in epidemiology, public health, and medicine."
+        ]
+      },
+      {
+        "title": "Why did we build it?",
+        "children": [
+          "We built covidactnow.org to <a href=\"https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca\" target=\"_blank\" rel=\"noopener noreferrer\">solve an urgent problem:</a> If we try to fight COVID in the present we will lose. We can only beat COVID by understanding what it will do in the future. Our leaders need a forecasting tool to better understand the future spread of COVID. We are building that tool."
+        ]
+      },
+      {
+        "title": "Who are you collaborating with?",
+        "children": [
+          "We endorse <a href=\"https://safepaths.mit.edu\" target=\"_blank\" rel=\"noopener noreferrer\">Private Kit: Safe Paths</a>, a project developed by MIT, Mayo Clinic, WHO, and others. Private Kit is a contact tracing app that notifies someone if they have come in contact with someone who later tests positive for COVID while protecting individual privacy.",
+          "<ul><li>Read <a href=\"https://arxiv.org/pdf/2003.08567.pdf\">\"Apps Gone Rogue: Maintaining Personal Privacy in an Epidemic\"</a></li><li>Download the app on <a href=\"https://play.google.com/store/apps/details?id=edu.mit.privatekit\" target=\"_blank\" rel=\"noopener noreferrer\">Google Play</a> or <a href=\"https://apps.apple.com/us/app/private-kit/id1501903733\" target=\"_blank\" rel=\"noopener noreferrer\">Apple Store</a></li></ul>"
+        ]
+      },
+      {
+        "title": "Can I contribute or help?",
+        "children": [
+          "Yes. To improve the tool, we need the help of:",
+          "<ul><li>JavaScript/React, Python engineers</li><li>Data Visualization Experts</li><li>UX Designer (Bonus if you write code!)</li><li>Epidimiologist / Modeler</li><li>Engineering Manager</li></ul>Is this you? <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSfQkdwXsbDbwLHhWwBD6wzNiw54_0P6A60r8hujP3qnaxxFkA/viewform\">Let us know</a>"
+        ]
+      },
+      {
+        "title": "How do I contact you?",
+        "children": [
+          "<ul><li>Are you in healthcare? <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"mailto:medical@covidactnow.org\">medical@covidactnow.org</a></li><li>Are you in government? <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"mailto:gov@covidactnow.org\">gov@covidactnow.org</a></li><li>Are you a journalist? <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"mailto:press@covidactnow.org\">press@covidactnow.org</a></li><li>Anyone and everything else: <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"mailto:info@covidactnow.org\">info@covidactnow.org</a></li><li>Do you want to contribute to Covid Act Now in other ways? <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSfQkdwXsbDbwLHhWwBD6wzNiw54_0P6A60r8hujP3qnaxxFkA/viewform\">Let us know</a></li></ul>"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "About the U.S. Intervention Model",
+    "children": [
+      {
+        "title": "What is the U.S. Intervention Model?",
+        "children": [
+          "The U.S. Intervention Model is a data platform that projects COVID infections, hospitalizations, and deaths across the United States, as well as model how public health interventions contain the spread of COVID and save lives."
+        ]
+      },
+      {
+        "title": "Can I view the model?",
+        "children": [
+          "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/covid-projections/covid-data-model\">Yes, the model is public</a>."
+        ]
+      },
+      {
+        "title": "What are your sources of data?",
+        "children": [
+          "Reference materials, including assumptions, logic, and definitions <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://data.covidactnow.org/Covid_Act_Now_Model_References_and_Assumptions.pdf\">are available here</a>."
+        ]
+      },
+      {
+        "title": "How often does the model update?",
+        "children": [
+          "The model updates every 24 hours."
+        ]
+      },
+      {
+        "title": "When was the last update?",
+        "children": [
+          "See the \"last updated\" date stamp on the state page."
+        ]
+      },
+      {
+        "title": "What are the current limitations of the model?",
+        "children": [
+          "A non-exhaustive list:",
+          "<ul><li>Only a small fraction of the world has been infected. It’s a new disease. Variables will change.</li><li>R0s (<a href=\"https://en.wikipedia.org/wiki/Basic_reproduction_number\">R0 is a fundamental epidemiological metric</a>) for interventions are guesses, in some cases informed by data. There is no historical precedent for what is going on right now to draw from.</li><li>The default R0 used in this model is an average. The model does not adjust for the population density, culturally-determined interaction frequency and closeness, humidity, etc. in calculating R0.</li><li>This is not a node-based analysis and thus assumes everyone spreads the disease at the same rate. In practice, there are some folks who are “super-spreaders,” and others who are almost isolated. Interventions should be targeted primarily at those most likely to spread the disease.</li><li>Only hospital beds in aggregate are considered. ICU beds and ventilators, which are likely to run low before beds, are not considered.</li><li>Demographics, populations, and hospital bed count data are outdated. Demographics for the U.S. as a whole are used, rather than specific to each state.</li><li>In containment cases, we do not consider the longer-term impacts of maintaining containment; primarily, the reintroduction of COVID through travel. 14-day mandatory border quarantines, such as those currently in place in China, would likely need to be implemented until a vaccine or therapeutic is developed.</li></ul>"
+        ]
+      },
+      {
+        "title": "What definition does Covid Act Now use for “social distancing” and “stay at home”? How about “poor/strict compliance” (re. “stay at home”)?",
+        "children": [
+          "All these definitions — and much more — can be found in our <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://data.covidactnow.org/Covid_Act_Now_Model_References_and_Assumptions.pdf\">Model Reference and Assumptions</a> document."
+        ]
+      },
+      {
+        "title": "What are the specific policies for my state?",
+        "children": [
+          "<i>The New York Times</i> lists <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nytimes.com/interactive/2020/us/coronavirus-stay-at-home-order.html\">every state's policies</a>."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "About COVID",
+    "children": [
+      {
+        "title": "What are the symptoms of COVID?",
+        "children": [
+          "The CDC has a list of <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">COVID symptoms</a>."
+        ]
+      },
+      {
+        "title": "Where/how should I get tested?",
+        "children": [
+          "The CDC has additional information on <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\">when and how to get tested</a>."
+        ]
+      },
+      {
+        "title": "What should I do if I think I am sick?",
+        "children": [
+          "The CDC provides advice on <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">what to do if you think you are sick</a>."
+        ]
+      },
+      {
+        "title": "Where can I get more information about COVID?",
+        "children": [
+          "The CDC has additional information on <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.cdc.gov/coronavirus/2019-ncov/index.html\">COVID</a>."
+        ]
+      },
+      {
+        "title": "Should I wear a mask in public?",
+        "children": [
+          "The WHO offers <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks\">advice</a> on the use of face masks, though there seems to be <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.washingtonpost.com/outlook/2020/03/28/masks-all-coronavirus/\">an emerging body of thought and evidence</a> that masks should be worn by everyone."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Other questions",
+    "children": [
+      {
+        "title": "When will I get my stimulus check?",
+        "children": [
+          "Please visit the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.irs.gov/coronavirus\">IRS’s page on stimulus checks</a> for more info, though this (from the IRS) is the takeaway for many folks: “The distribution of economic impact payments will begin in the next three weeks and will be distributed automatically, with no action required for most people.” ."
+        ]
+      }
+    ]
+  }
+]

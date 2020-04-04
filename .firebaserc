@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "abe-today"
+  },
+  "targets": {
+    "abe-today": {
+      "hosting": {
+        "covid-act-now": [
+          "covid-act-now"
+        ]
+      }
+    }
+  }
+}
