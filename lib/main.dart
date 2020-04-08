@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _fetchDataSource() async {
-    faqData = jsonDecode(await http.read(faqDataSourceURL));
+    faqData = jsonDecode(await http.read(faqDataSourceURL)) as List<dynamic>;
     setState(() {});
   }
 

@@ -11,7 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constants.dart';
 
-class ModelDaySnapshot implements Comparable {
+class ModelDaySnapshot implements Comparable<dynamic> {
   double Index;
   String Date;
   double EffectiveR0;
@@ -317,7 +317,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
         .reduce(math.min);
 
     return [
-      new charts.Series<ModelDaySnapshot, DateTime>(
+      charts.Series<ModelDaySnapshot, DateTime>(
           id: 'LIMITED_ACTION',
           colorFn: (_, __) =>
               _colorToChartColor(INTERVENTION_COLOR_MAP[LIMITED_ACTION]),
@@ -328,7 +328,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
               _slashDateToDatetime(mds.Date),
           measureFn: (ModelDaySnapshot mds, index) => mds.PredictedHospitalized,
           data: model0.sublist(0, intervals)),
-      new charts.Series<ModelDaySnapshot, DateTime>(
+      charts.Series<ModelDaySnapshot, DateTime>(
         id: 'SHELTER_IN_PLACE',
         colorFn: (_, __) =>
             _colorToChartColor(INTERVENTION_COLOR_MAP[SHELTER_IN_PLACE]),
@@ -339,7 +339,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
         measureFn: (ModelDaySnapshot mds, index) => mds.PredictedHospitalized,
         data: model1.sublist(0, intervals),
       ),
-      new charts.Series<ModelDaySnapshot, DateTime>(
+      charts.Series<ModelDaySnapshot, DateTime>(
         id: 'LOCKDOWN',
         colorFn: (_, __) =>
             _colorToChartColor(INTERVENTION_COLOR_MAP[LOCKDOWN]),
@@ -350,7 +350,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
         measureFn: (ModelDaySnapshot mds, index) => mds.PredictedHospitalized,
         data: model2.sublist(0, intervals),
       ),
-      new charts.Series<ModelDaySnapshot, DateTime>(
+      charts.Series<ModelDaySnapshot, DateTime>(
         id: 'SHELTER_IN_PLACE_WORST_CASE',
         colorFn: (_, __) => _colorToChartColor(
             INTERVENTION_COLOR_MAP[SHELTER_IN_PLACE_WORST_CASE]),
@@ -362,7 +362,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
         measureFn: (ModelDaySnapshot mds, index) => mds.PredictedHospitalized,
         data: model3.sublist(0, intervals),
       ),
-      new charts.Series<ModelDaySnapshot, DateTime>(
+      charts.Series<ModelDaySnapshot, DateTime>(
         id: 'beds',
         colorFn: (_, __) => charts.MaterialPalette.black,
         dashPatternFn: (_, __) => [4, 4],
@@ -590,14 +590,14 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
     List<charts.LineAnnotationSegment> rangeAnnotations = [];
 
-    rangeAnnotations.add(new charts.LineAnnotationSegment(
+    rangeAnnotations.add(charts.LineAnnotationSegment(
         DateTime.now(), charts.RangeAnnotationAxisType.domain,
         dashPattern: [2, 5],
         color: _colorToChartColor(Colors.black),
         startLabel: 'Today'));
 
     if (_overloadDate != null) {
-      rangeAnnotations.add(new charts.LineAnnotationSegment(
+      rangeAnnotations.add(charts.LineAnnotationSegment(
           _overloadDate, charts.RangeAnnotationAxisType.domain,
           color: _colorToChartColor(Colors.black),
           dashPattern: [2, 5],
@@ -605,7 +605,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
     }
 
     if (_selectionDate != null) {
-      rangeAnnotations.add(new charts.LineAnnotationSegment(
+      rangeAnnotations.add(charts.LineAnnotationSegment(
         _selectionDate,
         charts.RangeAnnotationAxisType.domain,
         color: _colorToChartColor(Colors.black),
@@ -619,8 +619,9 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
             _statusDialog(category: "Hospital Capacity", children: [
           _statusSection(
               title: "Poor Compliance",
-              text:
-              _modelOverloads[3] != null ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[3])}" : "We project no overload over the next 3 months",
+              text: _modelOverloads[3] != null
+                  ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[3])}"
+                  : "We project no overload over the next 3 months",
               statusIcon: _roundedIcon(
                   icon: Text(
                     "!",
@@ -634,7 +635,9 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
                   backgroundColor: INTERVENTION_COLOR_MAP[intervention])),
           _statusSection(
               title: "Strict Compliance",
-              text: _modelOverloads[2] != null ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[2])}" : "We project no overload over the next 3 months",
+              text: _modelOverloads[2] != null
+                  ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[2])}"
+                  : "We project no overload over the next 3 months",
               statusIcon: _roundedIcon(
                   icon: Icon(Icons.check, size: 18, color: Colors.white),
                   borderColor: INTERVENTION_COLOR_MAP[intervention],
@@ -695,9 +698,9 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
                   ? charts.TimeSeriesChart(
                       _lineData,
                       animate: false,
-                      domainAxis: new charts.EndPointsTimeAxisSpec(),
+                      domainAxis: charts.EndPointsTimeAxisSpec(),
                       selectionModels: [
-                        new charts.SelectionModelConfig(
+                        charts.SelectionModelConfig(
                           type: charts.SelectionModelType.info,
                           changedListener: (column) {
                             final selectedDatum = column.selectedDatum;
@@ -717,9 +720,9 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
                         )
                       ],
                       behaviors: [
-                        new charts.RangeAnnotation(rangeAnnotations),
+                        charts.RangeAnnotation(rangeAnnotations),
                       ],
-                      defaultRenderer: new charts.LineRendererConfig(
+                      defaultRenderer: charts.LineRendererConfig(
                         includeArea: true,
                       ),
                     )
