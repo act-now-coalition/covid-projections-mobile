@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "846213202035",
+    "firebase_url": "https://covid-actnow.firebaseio.com",
+    "project_id": "covid-actnow",
+    "storage_bucket": "covid-actnow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846213202035:android:3ce3e2b453312ebceaaa06",
+        "android_client_info": {
+          "package_name": "org.covidactnow.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846213202035-tv83mppvp32qkhbkupg8f1n919a97g7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjEsBy7LEolvn6pgj4SzMp5H6pTF786CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846213202035-tv83mppvp32qkhbkupg8f1n919a97g7p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "846213202035-c2najsh1bh1ra9cckackrsbg828l1a54.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.covidactnow.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
