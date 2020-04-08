@@ -6,7 +6,21 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b17de8a-1902-4ddb-b4bc-fa607f1c40e1" name="Default Changelist" comment="" />
+    <list default="true" id="6b17de8a-1902-4ddb-b4bc-fa607f1c40e1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/covidactnow_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/covidactnow_android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidactnow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/covidactnow.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,13 +29,27 @@
   <component name="FavoritesManager">
     <favorites_list name="covidactnow" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1Zuo3FUncV2P0s2pl41UiJmv6YN" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
@@ -33,6 +61,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -63,6 +92,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="184" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586299640470">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="184" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.825@0.23.1440.825" timestamp="1586299640470" />
     <state width="1878" height="2" key="GridCell.Tab.0.bottom" timestamp="1585937412944">
       <screen x="1920" y="103" width="1920" height="1080" />
     </state>
@@ -87,13 +120,19 @@
     <state width="1811" height="280" key="GridCell.Tab.0.right/1920.41.1920.1080/0.68.1920.1012@1920.41.1920.1080" timestamp="1585709162946" />
     <state width="1811" height="280" key="GridCell.Tab.0.right/1920.41.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1585716773320" />
     <state width="1878" height="2" key="GridCell.Tab.0.right/67.27.1853.1053/1920.103.1920.1080@1920.103.1920.1080" timestamp="1585937412944" />
-    <state x="2327" y="144" key="SettingsEditor" timestamp="1585874918371">
-      <screen x="1920" y="103" width="1920" height="1080" />
+    <state x="305" y="54" key="SettingsEditor" timestamp="1586299638357">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
+    <state x="305" y="54" key="SettingsEditor/0.23.1440.825@0.23.1440.825" timestamp="1586299638357" />
     <state x="2327" y="144" key="SettingsEditor/67.27.1853.1053/1920.103.1920.1080@1920.103.1920.1080" timestamp="1585874918371" />
-    <state x="2556" y="395" width="647" height="494" key="find.popup" timestamp="1585940441363">
-      <screen x="1920" y="103" width="1920" height="1080" />
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1586299564296">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.825@0.23.1440.825" timestamp="1586299564296" />
+    <state x="477" y="246" width="683" height="486" key="find.popup" timestamp="1586299384763">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="477" y="246" width="683" height="486" key="find.popup/0.23.1440.825@0.23.1440.825" timestamp="1586299384763" />
     <state x="2556" y="395" width="647" height="494" key="find.popup/67.27.1853.1053/1920.103.1920.1080@1920.103.1920.1080" timestamp="1585940441363" />
     <state x="2544" y="298" key="run.anything.popup" timestamp="1585942918498">
       <screen x="1920" y="103" width="1920" height="1080" />
