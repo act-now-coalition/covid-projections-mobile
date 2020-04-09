@@ -214,7 +214,6 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
       DateTime overloadDate;
 
-      print(model);
       model.forEach((mds) {
         if (bedsAvailable > 0) {
           final nextBedsAvailable =

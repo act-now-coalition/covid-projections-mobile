@@ -4,7 +4,8 @@ import 'package:covidactnow/pages/view_faq.dart';
 import 'package:covidactnow/pages/view_statelist.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import './constants.dart';
@@ -17,11 +18,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final FirebaseAnalytics analytics = FirebaseAnalytics();
+
     return MaterialApp(
       title: 'COVID ACT NOW',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
+      navigatorObservers: [
+        FirebaseAnalyticsObserver(analytics: analytics),
+      ],
       home: const MyHomePage(title: 'COVID ACT NOW'),
     );
   }
