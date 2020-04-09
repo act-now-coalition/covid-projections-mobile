@@ -28,6 +28,9 @@ linter:
     join_return_with_assignment: false
     non_constant_identifier_names: false
     constant_identifier_names: false
+    avoid_function_literals_in_foreach_calls: false
+    camel_case_types: false
+    prefer_if_elements_to_conditional_expressions: false
     # turn off if annoying
     # prefer_final_locals: false
     # prefer_const_constructors: false

@@ -6,35 +6,42 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Page_ViewFAQ extends StatelessWidget {
-  List<dynamic> faqData;
-  Page_ViewFAQ(this.faqData);
+  const Page_ViewFAQ(this.faqData);
+
+  final List<dynamic> faqData;
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> segments = [];
+    final List<Widget> segments = [];
 
     if (faqData != null) {
-      for (var section in faqData) {
-        segments.add(Container(
-            child: Text(section["title"], style: H1),
+      for (final section in faqData) {
+        segments.add(
+          Container(
             decoration: BoxDecoration(
-                color: ourLightGrey,
-                border:
-                    Border(left: BorderSide(width: 4, color: ourHighlight))),
+              color: ourLightGrey,
+              border: Border(
+                left: BorderSide(width: 4, color: ourHighlight),
+              ),
+            ),
             padding:
-                EdgeInsets.only(top: 16, bottom: 12, left: 16, right: 16)));
+                const EdgeInsets.only(top: 16, bottom: 12, left: 16, right: 16),
+            child: Text(section["title"] as String, style: H1),
+          ),
+        );
 
         segments.add(Container(height: 16));
-        for (var question in section["children"]) {
+        for (final question in section["children"]) {
           segments.add(Padding(
-              padding: EdgeInsets.only(left: 16, right: 16, top: 4),
-              child: Text(question["title"], style: H2)));
+              padding: const EdgeInsets.only(left: 16, right: 16, top: 4),
+              child: Text(question["title"] as String, style: H2)));
 
           segments.add(Markdown(
-            data: question["children"],
+            data: question["children"] as String,
             shrinkWrap: true,
-            padding: EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 16),
-            physics: NeverScrollableScrollPhysics(),
+            padding:
+                const EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 16),
+            physics: const NeverScrollableScrollPhysics(),
             onTapLink: (url) {
               launch(url);
             },
@@ -42,7 +49,7 @@ class Page_ViewFAQ extends StatelessWidget {
         }
       }
     } else {
-      segments.add(Text("Loading FAQ..."));
+      segments.add(const Text("Loading FAQ..."));
     }
 
     return Container(

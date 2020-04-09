@@ -1,8 +1,9 @@
+import 'dart:convert';
+
 import 'package:covidactnow/pages/view_faq.dart';
 import 'package:covidactnow/pages/view_statelist.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -21,13 +22,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: MyHomePage(title: 'COVID ACT NOW'),
+      home: const MyHomePage(title: 'COVID ACT NOW'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -38,7 +39,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
-  var faqDataSourceURL = "https://abe-today.firebaseio.com/can/faq.json";
+  final String faqDataSourceURL =
+      "https://abe-today.firebaseio.com/can/faq.json";
   List<dynamic> faqData;
 
   @override
@@ -47,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _fetchDataSource();
   }
 
-  void _fetchDataSource() async {
+  Future<void> _fetchDataSource() async {
     faqData = jsonDecode(await http.read(faqDataSourceURL)) as List<dynamic>;
     setState(() {});
   }
@@ -60,13 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var drawerTilePadding = EdgeInsets.only(left: 30, bottom: 2, top: 2);
-    List<Widget> tabs = [Page_ViewStatelist(), Page_ViewFAQ(faqData)];
+    const drawerTilePadding = EdgeInsets.only(left: 30, bottom: 2, top: 2);
+    final List<Widget> tabs = [Page_ViewStatelist(), Page_ViewFAQ(faqData)];
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Image(
+        title: const Image(
           image: AssetImage('assets/logo.png'),
           height: 38,
         ),
@@ -76,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
             color: Colors.white,
             child: ListView(
-              padding: EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30),
               children: <Widget>[
                 ListTile(
                   contentPadding: drawerTilePadding,
