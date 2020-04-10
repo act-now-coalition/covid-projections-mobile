@@ -120,35 +120,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
             color: Colors.white,
             child: ListView(
-              padding: const EdgeInsets.only(top: 30),
               children: <Widget>[
                 ListTile(
+                  leading: Icon(Icons.launch),
                   contentPadding: drawerTilePadding,
-                  title: Row(children: <Widget>[
-                    Text('Endorsements  ', style: H2),
-                    Icon(Icons.launch)
-                  ]),
+                  title: Text('Endorsements  ', style: H2),
                   onTap: () {
+                    Navigator.of(context).pop();
                     launch("https://covidactnow.org/endorsements");
                   },
                 ),
                 ListTile(
+                  leading: Icon(Icons.launch),
                   contentPadding: drawerTilePadding,
-                  title: Row(children: <Widget>[
-                    Text('Announcements  ', style: H2),
-                    Icon(Icons.launch)
-                  ]),
+                  title: Text('Announcements  ', style: H2),
                   onTap: () {
+                    Navigator.of(context).pop();
                     launch("https://blog.covidactnow.org/");
                   },
                 ),
                 ListTile(
+                  leading: Icon(Icons.launch),
                   contentPadding: drawerTilePadding,
-                  title: Row(children: <Widget>[
-                    Text('Terms of Service  ', style: H2),
-                    Icon(Icons.launch)
-                  ]),
+                  title: Text('Terms of Service  ', style: H2),
                   onTap: () {
+                    Navigator.of(context).pop();
                     launch("https://covidactnow.org/terms");
                   },
                 ),
