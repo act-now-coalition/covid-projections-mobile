@@ -79,7 +79,7 @@ class Page_ViewStatelist extends StatelessWidget {
               style: const TextStyle(color: Colors.black)),
           subtitle: RichText(
               text: TextSpan(
-                  style: TextStyle(color: ourDarkGrey),
+                  style: const TextStyle(color: ourDarkGrey),
                   text: INTERVENTION_TITLES[
                       STATE_INTERVENTION[state["state_code"]]],
                   children: [
