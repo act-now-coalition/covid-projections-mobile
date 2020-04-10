@@ -57,6 +57,18 @@ class _MyHomePageState extends State<MyHomePage> {
     initDynamicLinks();
   }
 
+  void handleDynamicLink(String path) {
+    switch (path.toLowerCase()) {
+      case '/faq':
+        // faq is index 1 of the BottomNavigationBar
+        _onItemTapped(1);
+        break;
+      default:
+        Navigator.pushNamed(context, path);
+        break;
+    }
+  }
+
   Future<void> initDynamicLinks() async {
     final PendingDynamicLinkData data =
         await FirebaseDynamicLinks.instance.getInitialLink();
