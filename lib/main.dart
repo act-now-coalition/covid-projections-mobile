@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final Uri deepLink = data?.link;
 
     if (deepLink != null) {
-      await Navigator.pushNamed(context, deepLink.path);
+      handleDynamicLink(deepLink.path);
     }
 
     FirebaseDynamicLinks.instance.onLink(
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
       final Uri deepLink = dynamicLink?.link;
 
       if (deepLink != null) {
-        await Navigator.pushNamed(context, deepLink.path);
+        handleDynamicLink(deepLink.path);
       }
     }, onError: (OnLinkErrorException e) async {
       print('onLinkError');
