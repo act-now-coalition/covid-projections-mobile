@@ -454,8 +454,8 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
   Widget _statusDialog({String category, List<Widget> children}) {
     final List<Widget> sections = [
       Container(
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10), topRight: Radius.circular(10)),
           color: ourLightGrey,
         ),
@@ -504,16 +504,16 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
             Container(
                 padding: const EdgeInsets.only(
                     left: 16, top: 10, right: 16, bottom: 4),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: ourLightGrey,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topRight: Radius.circular(10),
                     )),
                 child: Text(title, style: H3)),
             Container(
               padding: const EdgeInsets.only(
                   left: 16, top: 16, right: 16, bottom: 8),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: ourLightGrey,
               ),
               child: DefaultTextStyle(

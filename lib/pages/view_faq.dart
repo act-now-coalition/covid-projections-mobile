@@ -18,7 +18,7 @@ class Page_ViewFAQ extends StatelessWidget {
       for (final section in faqData) {
         segments.add(
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: ourLightGrey,
               border: Border(
                 left: BorderSide(width: 4, color: ourHighlight),
