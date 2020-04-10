@@ -92,7 +92,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - Firebase/DynamicLinks
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_dynamic_links (from `.symlinks/plugins/firebase_dynamic_links/ios`)
   - Flutter (from `Flutter`)
@@ -161,6 +160,6 @@ SPEC CHECKSUMS:
   url_launcher_macos: fd7894421cd39320dce5f292fc99ea9270b2a313
   url_launcher_web: e5527357f037c87560776e36436bf2b0288b965c
 
-PODFILE CHECKSUM: e49b5a6fe8ec30c57af18c0739c9a0331568bb7c
+PODFILE CHECKSUM: 23ee1bcbe2be9c06c2534e525c8477f045b53ead
 
 COCOAPODS: 1.9.1

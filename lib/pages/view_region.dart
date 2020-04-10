@@ -518,7 +518,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
               ),
               child: DefaultTextStyle(
                 style: H3.merge(
-                  TextStyle(color: Colors.black),
+                  const TextStyle(color: Colors.black),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -719,7 +719,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
             child: DefaultTextStyle(
               style: GoogleFonts.roboto(
                 textStyle: P.merge(
-                  TextStyle(
+                  const TextStyle(
                     color: Colors.black,
                   ),
                 ),
