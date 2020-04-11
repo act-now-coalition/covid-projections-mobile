@@ -1,5 +1,4 @@
 import 'package:covidactnow/pages/view_region.dart';
-import 'package:covidactnow/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:covidactnow/utils/map_ext.dart';
 
@@ -46,20 +45,6 @@ class Message {
   void navigateToRoute(
     BuildContext context,
   ) {
-    if (pageRoute != null && !pageRoute.isCurrent) {
-      Navigator.push(context, pageRoute);
-    }
-  }
-
-  Route<void> get pageRoute {
-    if (Utils.isEmpty(route)) {
-      return null;
-    }
-
-    return MaterialPageRoute<void>(
-      builder: (context) => Page_ViewRegion(
-        stateAbbr: route,
-      ),
-    );
+    Page_ViewRegion.navigateToPage(context, route);
   }
 }

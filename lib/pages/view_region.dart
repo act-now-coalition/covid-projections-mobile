@@ -126,6 +126,21 @@ class Page_ViewRegion extends StatefulWidget {
 
   final String stateAbbr;
 
+  // static helper to navigate to this page
+  static void navigateToPage(BuildContext context, String stateAbbr) {
+    if (Utils.isNotEmpty(stateAbbr)) {
+      final route = MaterialPageRoute<void>(
+        builder: (context) => Page_ViewRegion(
+          stateAbbr: stateAbbr,
+        ),
+      );
+
+      if (!route.isCurrent) {
+        Navigator.push(context, route);
+      }
+    }
+  }
+
   @override
   _Page_ViewRegion createState() => _Page_ViewRegion();
 }

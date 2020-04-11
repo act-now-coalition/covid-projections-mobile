@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:covidactnow/messaging/message_stream.dart';
 import 'package:covidactnow/pages/view_faq.dart';
+import 'package:covidactnow/pages/view_region.dart';
 import 'package:covidactnow/pages/view_statelist.dart';
 import 'package:covidactnow/utils/utils.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
@@ -64,11 +65,10 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  void handleDynamicLink(String path) {
+  void handleDynamicLink(String path, Map<String, String> params) {
     switch (path.toLowerCase()) {
-      case '/faq':
-        // faq is index 1 of the BottomNavigationBar
-        _onItemTapped(1);
+      case '/open':
+        Page_ViewRegion.navigateToPage(context, params['state']);
         break;
       default:
         Navigator.pushNamed(context, path);
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final Uri deepLink = data?.link;
 
     if (deepLink != null) {
-      handleDynamicLink(deepLink.path);
+      handleDynamicLink(deepLink.path, deepLink.queryParameters);
     }
 
     FirebaseDynamicLinks.instance.onLink(
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
       final Uri deepLink = dynamicLink?.link;
 
       if (deepLink != null) {
-        handleDynamicLink(deepLink.path);
+        handleDynamicLink(deepLink.path, deepLink.queryParameters);
       }
     }, onError: (OnLinkErrorException e) async {
       print('onLinkError');
