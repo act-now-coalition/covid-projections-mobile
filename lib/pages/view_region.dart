@@ -587,10 +587,10 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
                 ),
               ),
               Container(height: 8),
-              Markdown(
+              const Markdown(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   data:
                       """To prevent hospital overload, our projections indicate a Stay at Home order must be implemented. The sooner you act, the more lives you save."""),
             ]));
