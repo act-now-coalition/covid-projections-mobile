@@ -4,7 +4,6 @@ import 'package:covidactnow/messaging/message_stream.dart';
 import 'package:covidactnow/pages/view_faq.dart';
 import 'package:covidactnow/pages/view_region.dart';
 import 'package:covidactnow/pages/view_statelist.dart';
-import 'package:covidactnow/utils/create_dynamic_links.dart';
 import 'package:covidactnow/utils/utils.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
@@ -159,18 +158,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {
                     Navigator.of(context).pop();
                     launch("https://covidactnow.org/terms");
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.launch),
-                  contentPadding: drawerTilePadding,
-                  title: Text('Test dynamic link', style: H2),
-                  onTap: () async {
-                    Navigator.of(context).pop();
-                    final Uri res = await createDynamicLink("CA");
-
-                    print(res.toString());
-                    await launch(res.toString());
                   },
                 ),
               ],
