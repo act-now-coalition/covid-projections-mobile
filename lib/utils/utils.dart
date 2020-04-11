@@ -72,4 +72,26 @@ class Utils {
         Platform.isLinux ||
         Platform.isWindows);
   }
+
+  static bool isNotEmpty(dynamic input) {
+    if (input == null) {
+      return false;
+    }
+
+    if (input is String) {
+      return input.isNotEmpty;
+    }
+
+    if (input is List) {
+      return input.isNotEmpty;
+    }
+
+    print('isNotEmpty called on ${input.runtimeType}');
+
+    return false;
+  }
+
+  static bool isEmpty(dynamic input) {
+    return !isNotEmpty(input);
+  }
 }

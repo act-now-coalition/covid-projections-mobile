@@ -1,22 +1,14 @@
 import 'package:covidactnow/pages/view_region.dart';
+import 'package:covidactnow/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:covidactnow/utils/map_ext.dart';
 
 class Message {
-  const Message(this.title, this.body);
+  Message(this.title, this.body);
 
-  Message.fromMap(Map<String, dynamic> map)
-      : title = stringFromMap(map, returnTitle: true),
-        body = stringFromMap(map, returnTitle: false);
-
-  final String title;
-  final String body;
-
-  static String stringFromMap(Map<String, dynamic> map, {bool returnTitle}) {
+  Message.fromMap(Map<String, dynamic> map) {
     final notification = map.mapForKey<String, dynamic>('notification');
     final data = map.mapForKey<String, dynamic>('data');
-    String title;
-    String body;
 
     if (notification != null && notification['title'] != null) {
       // for onMessage
@@ -28,28 +20,36 @@ class Message {
       body = data.strForKey('body');
     }
 
-    title = title ?? 'title';
-    body = body ?? 'body';
-
-    if (returnTitle) {
-      return title;
+    // get route information
+    if (data != null) {
+      route = data.strForKey('route');
     }
 
-    return body;
+    title = title ?? 'title';
+    body = body ?? 'body';
   }
+
+  String title;
+  String body;
+  String route;
 
   void navigateToRoute(
     BuildContext context,
   ) {
-    if (!route.isCurrent) {
-      Navigator.push(context, route);
+    if (pageRoute != null && !pageRoute.isCurrent) {
+      Navigator.push(context, pageRoute);
     }
   }
 
-  Route<void> get route {
+  Route<void> get pageRoute {
+    if (Utils.isEmpty(route)) {
+      print('route is null');
+      return null;
+    }
+
     return MaterialPageRoute<void>(
-      builder: (context) => const Page_ViewRegion(
-        stateAbbr: 'TX',
+      builder: (context) => Page_ViewRegion(
+        stateAbbr: route,
       ),
     );
   }

@@ -6,6 +6,17 @@ import 'package:covidactnow/utils/map_ext.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
+/*
+
+  To send a message, go to the firebase Cloud messaging panel
+
+  Additional options:
+    Custom data:
+      click_action: FLUTTER_NOTIFICATION_CLICK
+      route: <State abbr>
+
+*/
+
 class MessageStream {
   factory MessageStream() {
     _singleton ??= MessageStream._();
@@ -18,7 +29,6 @@ class MessageStream {
   }
 
   static MessageStream _singleton;
-
   FirebaseMessaging _firebaseMessaging;
   StreamController<Map<String, dynamic>> _streamController;
 
@@ -30,9 +40,11 @@ class MessageStream {
     final MessageStream _messageStream = MessageStream();
 
     _messageStream.stream.forEach((Map event) {
+      print(event.toString());
+
       switch (event.strForKey('event')) {
         case 'onMessage':
-          showItemDialog(
+          showMessageDialog(
             context,
             Message.fromMap(
               event.mapForKey<String, dynamic>('message'),

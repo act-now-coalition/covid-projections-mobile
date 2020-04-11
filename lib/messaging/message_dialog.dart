@@ -1,9 +1,10 @@
 import 'package:covidactnow/messaging/message.dart';
 import 'package:flutter/material.dart';
 
-Widget _messageDialog(BuildContext context, Message item) {
+Widget _messageDialog(BuildContext context, Message message) {
   return AlertDialog(
-    content: Text(item.title),
+    title: Text(message.title),
+    content: Text(message.body),
     actions: <Widget>[
       FlatButton(
         onPressed: () {
@@ -21,13 +22,13 @@ Widget _messageDialog(BuildContext context, Message item) {
   );
 }
 
-Future<void> showItemDialog(BuildContext context, Message message) async {
-  final bool shouldNavigate = await showDialog<bool>(
+Future<void> showMessageDialog(BuildContext context, Message message) async {
+  final bool clickedShow = await showDialog<bool>(
     context: context,
-    builder: (_) => _messageDialog(context, message),
+    builder: (context) => _messageDialog(context, message),
   );
 
-  if (shouldNavigate == true) {
+  if (clickedShow == true) {
     message.navigateToRoute(context);
   }
 }
