@@ -8,7 +8,9 @@ class Message {
 
   Message.fromMap(Map<String, dynamic> map) {
     final notification = map.mapForKey<String, dynamic>('notification');
-    final data = map.mapForKey<String, dynamic>('data');
+
+    // iOS doesn't have 'data', if null, look in map
+    final data = map.mapForKey<String, dynamic>('data') ?? map;
 
     if (notification != null && notification['title'] != null) {
       // for onMessage
