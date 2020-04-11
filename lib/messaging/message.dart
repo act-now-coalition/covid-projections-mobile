@@ -3,10 +3,17 @@ import 'package:covidactnow/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:covidactnow/utils/map_ext.dart';
 
-class Message {
-  Message(this.title, this.body);
+enum MessageType {
+  onMessage,
+  onLaunch,
+  onResume,
+  onBackgroundMessage,
+}
 
-  Message.fromMap(Map<String, dynamic> map) {
+class Message {
+  Message(this.title, this.body, this.type);
+
+  Message.fromMap(Map<String, dynamic> map, this.type) {
     final notification = map.mapForKey<String, dynamic>('notification');
 
     // iOS doesn't have 'data', if null, look in map
@@ -34,6 +41,7 @@ class Message {
   String title;
   String body;
   String route;
+  MessageType type;
 
   void navigateToRoute(
     BuildContext context,
@@ -45,7 +53,6 @@ class Message {
 
   Route<void> get pageRoute {
     if (Utils.isEmpty(route)) {
-      print('route is null');
       return null;
     }
 
