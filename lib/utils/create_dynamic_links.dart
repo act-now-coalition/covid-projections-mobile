@@ -1,33 +1,31 @@
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 Future<Uri> createDynamicLink(String stateAbbr) async {
-  // https://covidactnow.page.link/?link=https://covidactnow.org/&isi=1507057049&ibi=org.covidactnow.mobile
+  const String uriPrefix = 'https://covidactnow.page.link';
+  final String link = 'https://covidactnow.org/open?state=$stateAbbr';
+  const String androidPackageName = 'org.covidactnow.mobile';
+  const String iosBundleId = 'org.covidactnow.mobile';
+  const String appStoreId = '1507057049';
+  const String title = 'Act now. Save lives.';
+  const String description =
+      'Understand when hospitals will likely become overloaded by COVID and what you can do to stop it.';
 
   final DynamicLinkParameters components = DynamicLinkParameters(
-    uriPrefix: 'https://covidactnow.page.link',
-    link: Uri.parse('https://covidactnow.org/open?state=$stateAbbr'),
+    uriPrefix: uriPrefix,
+    link: Uri.parse(link),
     androidParameters: AndroidParameters(
-      packageName: 'org.covidactnow.mobile',
+      packageName: androidPackageName,
       //   minimumVersion: 125,
     ),
     iosParameters: IosParameters(
-      bundleId: 'org.covidactnow.mobile',
+      bundleId: iosBundleId,
       // minimumVersion: '1.0.1',
-      appStoreId: '1507057049',
+      appStoreId: appStoreId,
     ),
-    // googleAnalyticsParameters: GoogleAnalyticsParameters(
-    //   campaign: 'example-promo',
-    //   medium: 'social',
-    //   source: 'orkut',
-    // ),
-    // itunesConnectAnalyticsParameters: ItunesConnectAnalyticsParameters(
-    //   providerToken: '123456',
-    //   campaignToken: 'example-promo',
-    // ),
-    // socialMetaTagParameters: SocialMetaTagParameters(
-    //   title: 'Example of a Dynamic Link',
-    //   description: 'This link works whether app is installed or not!',
-    // ),
+    socialMetaTagParameters: SocialMetaTagParameters(
+      title: title,
+      description: description,
+    ),
   );
 
   final ShortDynamicLink shortDynamicLink = await components.buildShortLink();
