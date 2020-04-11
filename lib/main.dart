@@ -6,6 +6,7 @@ import 'package:covidactnow/pages/view_statelist.dart';
 import 'package:covidactnow/utils/utils.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
@@ -112,6 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     const drawerTilePadding = EdgeInsets.only(left: 30, bottom: 2, top: 2);
     final List<Widget> tabs = [Page_ViewStatelist(), Page_ViewFAQ(faqData)];
+
+    // get rid of status bar color on Android
+    SystemChrome.setSystemUIOverlayStyle(
+      Utils.systemUiStyle(context),
+    );
 
     return Scaffold(
       appBar: AppBar(

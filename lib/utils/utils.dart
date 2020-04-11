@@ -3,6 +3,8 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 class Utils {
@@ -17,6 +19,22 @@ class Utils {
     }
     final url = "$hostname$path";
     return http.read(url);
+  }
+
+  static bool isDarkMode(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark;
+  }
+
+  static SystemUiOverlayStyle systemUiStyle(BuildContext context) {
+    if (Utils.isDarkMode(context)) {
+      return SystemUiOverlayStyle.dark.copyWith(
+        statusBarColor: Colors.transparent,
+      );
+    }
+
+    return SystemUiOverlayStyle.light.copyWith(
+      statusBarColor: Colors.transparent,
+    );
   }
 
   static bool get isAndroid {
