@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void handleDynamicLink(String path, Map<String, String> params) {
     switch (path.toLowerCase()) {
-      case '/open':
+      case '/mobile':
         Page_ViewRegion.navigateToPage(context, params['state']);
         break;
       default:
