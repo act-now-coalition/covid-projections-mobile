@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:math' as math;
 
-import 'package:covidactnow/utils.dart';
+import 'package:covidactnow/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -149,8 +149,8 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
   Future<void> _loadResistBot() async {
     final Map<String, dynamic> resistBotData = jsonDecode(
-            await getCovidActNowPage("/resistbot/${widget.stateAbbr}.json"))
-        as Map<String, dynamic>;
+        await Utils.getCovidActNowPage(
+            "/resistbot/${widget.stateAbbr}.json")) as Map<String, dynamic>;
 
     final rbs = ResistBotSnapshot(
       noAction: ResistBotScenarioSnapshot(
@@ -269,7 +269,7 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
   Future<List<ModelDaySnapshot>> _getModelForState(
       {String stateAbbr, int modelId}) async {
     final stateMDSs =
-        await getCovidActNowPage("/data/$stateAbbr.$modelId.json");
+        await Utils.getCovidActNowPage("/data/$stateAbbr.$modelId.json");
 
     final List<ModelDaySnapshot> mdss = [];
     final List<List<dynamic>> list =

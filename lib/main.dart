@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:covidactnow/messaging/message_stream.dart';
 import 'package:covidactnow/pages/view_faq.dart';
 import 'package:covidactnow/pages/view_statelist.dart';
+import 'package:covidactnow/utils/utils.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -55,6 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     _fetchDataSource();
     initDynamicLinks();
+
+    if (Utils.isMobile) {
+      MessageStream.listen(context);
+    }
   }
 
   void handleDynamicLink(String path) {
