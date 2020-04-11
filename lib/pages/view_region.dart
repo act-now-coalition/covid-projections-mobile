@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:math' as math;
 
+import 'package:covidactnow/utils/share_dialog.dart';
 import 'package:covidactnow/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -89,10 +90,11 @@ class ModelDaySnapshot implements Comparable<dynamic> {
 }
 
 class ResistBotScenarioSnapshot {
-  ResistBotScenarioSnapshot(
-      {this.cumulativeAffected,
-      this.overloadedHospitals,
-      this.estimatedDeaths});
+  ResistBotScenarioSnapshot({
+    this.cumulativeAffected,
+    this.overloadedHospitals,
+    this.estimatedDeaths,
+  });
 
   final String cumulativeAffected;
   final String overloadedHospitals;
@@ -100,15 +102,16 @@ class ResistBotScenarioSnapshot {
 }
 
 class ResistBotSnapshot {
-  ResistBotSnapshot(
-      {this.lockdown,
-      this.noAction,
-      this.shelterInPlace,
-      this.socialDistancing,
-      this.noReturnRangeEnd,
-      this.noReturnRangeStart,
-      this.socialDistancingNoReturnRangeEnd,
-      this.socialDistancingNoReturnRangeStart});
+  ResistBotSnapshot({
+    this.lockdown,
+    this.noAction,
+    this.shelterInPlace,
+    this.socialDistancing,
+    this.noReturnRangeEnd,
+    this.noReturnRangeStart,
+    this.socialDistancingNoReturnRangeEnd,
+    this.socialDistancingNoReturnRangeStart,
+  });
 
   final ResistBotScenarioSnapshot noAction;
   final ResistBotScenarioSnapshot lockdown;
@@ -281,8 +284,10 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
     });
   }
 
-  Future<List<ModelDaySnapshot>> _getModelForState(
-      {String stateAbbr, int modelId}) async {
+  Future<List<ModelDaySnapshot>> _getModelForState({
+    String stateAbbr,
+    int modelId,
+  }) async {
     final stateMDSs =
         await Utils.getCovidActNowPage("/data/$stateAbbr.$modelId.json");
 
@@ -294,27 +299,28 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
       final mds = ModelDaySnapshot();
 
       Function.apply(
-          mds.load,
-          row.map<dynamic>((dynamic col) {
-            if (col is double) {
+        mds.load,
+        row.map<dynamic>((dynamic col) {
+          if (col is double) {
+            return col;
+          }
+
+          if (col is String) {
+            if (col.contains("/")) {
               return col;
             }
+            return double.parse(col.replaceAll(",", ""));
+          }
 
-            if (col is String) {
-              if (col.contains("/")) {
-                return col;
-              }
-              return double.parse(col.replaceAll(",", ""));
-            }
+          if (col is int) {
+            // SNG added return, looked like a bug
+            return col.toDouble();
+          }
 
-            if (col is int) {
-              // SNG added return, looked like a bug
-              return col.toDouble();
-            }
-
-            // SNG added return col, no return, should it be null?
-            return col;
-          }).toList());
+          // SNG added return col, no return, should it be null?
+          return col;
+        }).toList(),
+      );
       mdss.add(mds);
     }
 
@@ -354,16 +360,16 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
     return <dynamic>[
       charts.Series<ModelDaySnapshot, DateTime>(
-          id: 'LIMITED_ACTION',
-          colorFn: (_, __) =>
-              _colorToChartColor(INTERVENTION_COLOR_MAP[LIMITED_ACTION]),
-          areaColorFn: (_, __) =>
-              _colorToChartColor(INTERVENTION_COLOR_MAP[LIMITED_ACTION])
-                  .lighter,
-          domainFn: (ModelDaySnapshot mds, index) =>
-              _slashDateToDatetime(mds.Date),
-          measureFn: (ModelDaySnapshot mds, index) => mds.PredictedHospitalized,
-          data: model0.sublist(0, intervals)),
+        id: 'LIMITED_ACTION',
+        colorFn: (_, __) =>
+            _colorToChartColor(INTERVENTION_COLOR_MAP[LIMITED_ACTION]),
+        areaColorFn: (_, __) =>
+            _colorToChartColor(INTERVENTION_COLOR_MAP[LIMITED_ACTION]).lighter,
+        domainFn: (ModelDaySnapshot mds, index) =>
+            _slashDateToDatetime(mds.Date),
+        measureFn: (ModelDaySnapshot mds, index) => mds.PredictedHospitalized,
+        data: model0.sublist(0, intervals),
+      ),
       charts.Series<ModelDaySnapshot, DateTime>(
         id: 'SHELTER_IN_PLACE',
         colorFn: (_, __) =>
@@ -410,20 +416,25 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
     ];
   }
 
-  Widget _roundedIcon(
-      {Widget icon,
-      Color borderColor = ourDarkGrey,
-      Color backgroundColor = Colors.white}) {
+  Widget _roundedIcon({
+    Widget icon,
+    Color borderColor = ourDarkGrey,
+    Color backgroundColor = Colors.white,
+  }) {
     return Container(
       width: 24,
       height: 24,
       decoration: BoxDecoration(
-          color: borderColor, borderRadius: BorderRadius.circular(100)),
+        color: borderColor,
+        borderRadius: BorderRadius.circular(100),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(2),
         child: Container(
           decoration: BoxDecoration(
-              color: backgroundColor, borderRadius: BorderRadius.circular(100)),
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(100),
+          ),
           child: icon,
         ),
       ),
@@ -431,22 +442,26 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
   }
 
   Widget _interventionDialog({String intervention, String category}) {
-    return _statusDialog(category: category, children: [
-      _statusSection(
-        title: INTERVENTION_TITLES[intervention],
-        text: INTERVENTION_DESCRIPTIONS[intervention],
-        statusIcon: _roundedIcon(
-          icon: Padding(
-            padding: const EdgeInsets.all(2),
-            child: Container(
-              decoration: BoxDecoration(
+    return _statusDialog(
+      category: category,
+      children: [
+        _statusSection(
+          title: INTERVENTION_TITLES[intervention],
+          text: INTERVENTION_DESCRIPTIONS[intervention],
+          statusIcon: _roundedIcon(
+            icon: Padding(
+              padding: const EdgeInsets.all(2),
+              child: Container(
+                decoration: BoxDecoration(
                   color: INTERVENTION_COLOR_MAP[intervention],
-                  borderRadius: BorderRadius.circular(100)),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
             ),
           ),
-        ),
-      )
-    ]);
+        )
+      ],
+    );
   }
 
   charts.Color _colorToChartColor(Color color) {
@@ -455,15 +470,21 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
   Widget _statusSection({String title, String text, Widget statusIcon}) {
     return Container(
-        padding: const EdgeInsets.all(16),
-        child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
           statusIcon,
           Container(width: 16),
           Flexible(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text(title, style: H3), Text(text)]))
-        ]));
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text(title, style: H3), Text(text)],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _statusDialog({String category, List<Widget> children}) {
@@ -471,13 +492,20 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
       Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
           color: ourLightGrey,
         ),
         child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Text(category,
-                style: H3.merge(TextStyle(fontWeight: FontWeight.bold)))),
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            category,
+            style: H3.merge(
+              TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
       )
     ];
 
@@ -489,9 +517,12 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
       padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            border: Border.all(color: ourMediumGrey, width: 1)),
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
+          border: Border.all(color: ourMediumGrey, width: 1),
+        ),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch, children: sections),
       ),
@@ -504,8 +535,9 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
       String deaths,
       String hospitalOverload,
       Color color}) {
-    final lightP =
-        P.merge(TextStyle(color: ourDarkGrey, fontWeight: FontWeight.normal));
+    final lightP = P.merge(
+      TextStyle(color: ourDarkGrey, fontWeight: FontWeight.normal),
+    );
     return Padding(
       padding: const EdgeInsets.only(
           top: 5, bottom: 5), //EdgeInsets.only(top: 5, right: 16, left: 16),
@@ -517,14 +549,15 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-                padding: const EdgeInsets.only(
-                    left: 16, top: 10, right: 16, bottom: 4),
-                decoration: const BoxDecoration(
-                    color: ourLightGrey,
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10),
-                    )),
-                child: Text(title, style: H3)),
+              padding: const EdgeInsets.only(
+                  left: 16, top: 10, right: 16, bottom: 4),
+              decoration: const BoxDecoration(
+                  color: ourLightGrey,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(10),
+                  )),
+              child: Text(title, style: H3),
+            ),
             Container(
               padding: const EdgeInsets.only(
                   left: 16, top: 16, right: 16, bottom: 8),
@@ -539,7 +572,10 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Column(
-                      children: [Text(deaths), Text("Deaths", style: lightP)],
+                      children: [
+                        Text(deaths),
+                        Text("Deaths", style: lightP),
+                      ],
                     ),
                     Column(
                       children: [
@@ -565,50 +601,19 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
   Widget _headerActNow(String state_name, String intervention) {
     return Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-            border: Border(
-                left: BorderSide(
-                    color: INTERVENTION_COLOR_MAP[intervention], width: 4))),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              RichText(
-                text: TextSpan(
-                  text: 'You must act now in ',
-                  style: H2.merge(TextStyle(
-                      fontWeight: FontWeight.normal, color: Colors.black)),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: state_name,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    const TextSpan(text: ".")
-                  ],
-                ),
-              ),
-              Container(height: 8),
-              const Markdown(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  data:
-                      """To prevent hospital overload, our projections indicate a Stay at Home order must be implemented. The sooner you act, the more lives you save."""),
-            ]));
-  }
-
-  Widget _headerKeepActing(String state_name, String intervention) {
-    return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-          border: Border(
-              left: BorderSide(
-                  color: INTERVENTION_COLOR_MAP[intervention], width: 3))),
+        border: Border(
+          left:
+              BorderSide(color: INTERVENTION_COLOR_MAP[intervention], width: 4),
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           RichText(
             text: TextSpan(
-              text: 'Keep staying at home in ',
+              text: 'You must act now in ',
               style: H2.merge(TextStyle(
                   fontWeight: FontWeight.normal, color: Colors.black)),
               children: <TextSpan>[
@@ -619,13 +624,54 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
               ],
             ),
           ),
+          Container(height: 8),
+          const Markdown(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            data:
+                """To prevent hospital overload, our projections indicate a Stay at Home order must be implemented. The sooner you act, the more lives you save.""",
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _headerKeepActing(String state_name, String intervention) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        border: Border(
+          left:
+              BorderSide(color: INTERVENTION_COLOR_MAP[intervention], width: 3),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          RichText(
+            text: TextSpan(
+              text: 'Keep staying at home in ',
+              style: H2.merge(
+                TextStyle(fontWeight: FontWeight.normal, color: Colors.black),
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: state_name,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const TextSpan(text: ".")
+              ],
+            ),
+          ),
           Container(height: 10),
           RichText(
             text: TextSpan(
               text:
                   'Avoiding hospital overload heavily depends on population density and public cooperation. Best and worst case scenarios are shown below, and we’ll update our projections as soon as more data becomes available.',
               style: P.merge(
-                  TextStyle(fontWeight: FontWeight.normal, color: ourDarkGrey)),
+                TextStyle(fontWeight: FontWeight.normal, color: ourDarkGrey),
+              ),
             ),
           ),
         ],
@@ -641,26 +687,34 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
 
     final List<charts.LineAnnotationSegment> rangeAnnotations = [];
 
-    rangeAnnotations.add(charts.LineAnnotationSegment<DateTime>(
-        DateTime.now(), charts.RangeAnnotationAxisType.domain,
-        dashPattern: [2, 5],
-        color: _colorToChartColor(Colors.black),
-        startLabel: 'Today'));
+    rangeAnnotations.add(
+      charts.LineAnnotationSegment<DateTime>(
+          DateTime.now(), charts.RangeAnnotationAxisType.domain,
+          dashPattern: [2, 5],
+          color: _colorToChartColor(Colors.black),
+          startLabel: 'Today'),
+    );
 
     if (_overloadDate != null) {
-      rangeAnnotations.add(charts.LineAnnotationSegment<dynamic>(
-          _overloadDate, charts.RangeAnnotationAxisType.domain,
+      rangeAnnotations.add(
+        charts.LineAnnotationSegment<dynamic>(
+          _overloadDate,
+          charts.RangeAnnotationAxisType.domain,
           color: _colorToChartColor(Colors.black),
           dashPattern: [2, 5],
-          startLabel: 'Full Hospitals'));
+          startLabel: 'Full Hospitals',
+        ),
+      );
     }
 
     if (_selectionDate != null) {
-      rangeAnnotations.add(charts.LineAnnotationSegment<dynamic>(
-        _selectionDate,
-        charts.RangeAnnotationAxisType.domain,
-        color: _colorToChartColor(Colors.black),
-      ));
+      rangeAnnotations.add(
+        charts.LineAnnotationSegment<dynamic>(
+          _selectionDate,
+          charts.RangeAnnotationAxisType.domain,
+          color: _colorToChartColor(Colors.black),
+        ),
+      );
     }
 
     Widget overloadProjections = const Text("");
@@ -669,56 +723,73 @@ class _Page_ViewRegion extends State<Page_ViewRegion> {
         overloadProjections =
             _statusDialog(category: "Hospital Capacity", children: [
           _statusSection(
-              title: "Poor Compliance",
-              text: _modelOverloads[3] != null
-                  ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[3])}"
-                  : "We project no overload over the next 3 months",
-              statusIcon: _roundedIcon(
-                  icon: Text(
-                    "!",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  borderColor: INTERVENTION_COLOR_MAP[intervention],
-                  backgroundColor: INTERVENTION_COLOR_MAP[intervention])),
+            title: "Poor Compliance",
+            text: _modelOverloads[3] != null
+                ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[3])}"
+                : "We project no overload over the next 3 months",
+            statusIcon: _roundedIcon(
+              icon: Text(
+                "!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              borderColor: INTERVENTION_COLOR_MAP[intervention],
+              backgroundColor: INTERVENTION_COLOR_MAP[intervention],
+            ),
+          ),
           _statusSection(
-              title: "Strict Compliance",
-              text: _modelOverloads[2] != null
-                  ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[2])}"
-                  : "We project no overload over the next 3 months",
-              statusIcon: _roundedIcon(
-                  icon: Icon(Icons.check, size: 18, color: Colors.white),
-                  borderColor: INTERVENTION_COLOR_MAP[intervention],
-                  backgroundColor: INTERVENTION_COLOR_MAP[intervention]))
+            title: "Strict Compliance",
+            text: _modelOverloads[2] != null
+                ? "We project hospitals will become overloaded by ${dateFormat.format(_modelOverloads[2])}"
+                : "We project no overload over the next 3 months",
+            statusIcon: _roundedIcon(
+              icon: Icon(Icons.check, size: 18, color: Colors.white),
+              borderColor: INTERVENTION_COLOR_MAP[intervention],
+              backgroundColor: INTERVENTION_COLOR_MAP[intervention],
+            ),
+          )
         ]);
       } else {
-        overloadProjections =
-            _statusDialog(category: "Hospital Capacity", children: [
-          _statusSection(
+        overloadProjections = _statusDialog(
+          category: "Hospital Capacity",
+          children: [
+            _statusSection(
               title: "Overload Projected",
               text:
                   "We project hospitals will become overloaded by ${dateFormat.format(_overloadDate)}",
               statusIcon: _roundedIcon(
-                  icon: Text(
-                    "!",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                icon: Text(
+                  "!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                  borderColor: INTERVENTION_COLOR_MAP[intervention],
-                  backgroundColor: INTERVENTION_COLOR_MAP[intervention]))
-        ]);
+                ),
+                borderColor: INTERVENTION_COLOR_MAP[intervention],
+                backgroundColor: INTERVENTION_COLOR_MAP[intervention],
+              ),
+            )
+          ],
+        );
       }
     }
+
+    final shareButton = IconButton(
+      icon: Icon(Icons.share),
+      onPressed: () {
+        showShareDialog(context, widget.stateAbbr);
+      },
+    );
 
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
+        actions: [shareButton],
         backgroundColor: Colors.white,
         title: Text(state["state"] as String),
       ),
