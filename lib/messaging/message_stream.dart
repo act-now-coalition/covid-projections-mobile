@@ -36,10 +36,12 @@ class MessageStream {
   Future<String> get token => _firebaseMessaging.getToken();
 
   // called from main.dart to listen for notifications
-  static void listen(BuildContext context) {
-    final MessageStream _messageStream = MessageStream();
+  // we need a context to show the dialog and navigate
+  static StreamSubscription<Message> listen(BuildContext context) {
+    final MessageStream messageStream = MessageStream();
 
-    _messageStream.stream.forEach((Message message) {
+    final StreamSubscription<Message> subscription =
+        messageStream.stream.listen((Message message) {
       switch (message.type) {
         case MessageType.onMessage:
           showMessageDialog(
@@ -56,6 +58,8 @@ class MessageStream {
           break;
       }
     });
+
+    return subscription;
   }
 
   void _sendEvent(Message message) {

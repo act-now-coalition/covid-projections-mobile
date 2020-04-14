@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:covidactnow/messaging/message_stream.dart';
@@ -49,6 +50,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  StreamSubscription _pushNotificationSubscription;
 
   final String faqDataSourceURL =
       "https://abe-today.firebaseio.com/can/faq.json";
@@ -61,8 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
     initDynamicLinks();
 
     if (Utils.isMobile) {
-      MessageStream.listen(context);
+      _pushNotificationSubscription = MessageStream.listen(context);
     }
+  }
+
+  @override
+  void dispose() {
+    _pushNotificationSubscription?.cancel();
+    super.dispose();
   }
 
   void handleDynamicLink(String path, Map<String, String> params) {
