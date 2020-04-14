@@ -42,6 +42,11 @@ class Message {
   String route;
   MessageType type;
 
+  @override
+  String toString() {
+    return '$title, $body, $route';
+  }
+
   void navigateToRoute(
     BuildContext context,
   ) {

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:covidactnow/messaging/message.dart';
 import 'package:covidactnow/messaging/message_dialog.dart';
+import 'package:covidactnow/utils/utils.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,7 @@ class MessageStream {
       onMessage: (Map<String, dynamic> messageMap) async {
         _sendEvent(Message.fromMap(messageMap, MessageType.onMessage));
       },
-      onBackgroundMessage: backgroundMessageHandler,
+      onBackgroundMessage: Utils.isIOS ? null : backgroundMessageHandler,
       onLaunch: (Map<String, dynamic> messageMap) async {
         _sendEvent(Message.fromMap(messageMap, MessageType.onLaunch));
       },
@@ -86,6 +87,9 @@ class MessageStream {
         .listen((IosNotificationSettings settings) {
       print('Settings registered: $settings');
     });
+
+    // if you need the token to test this device, uncomment below
+    // _firebaseMessaging.getToken().then((value) => print(value));
 
     _firebaseMessaging.subscribeToTopic('all');
 
