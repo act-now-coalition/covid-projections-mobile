@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>509481379545-82cg2jtub6l5f8atdagkulqja18rp8v4.apps.googleusercontent.com</string>
+	<string>846213202035-c2najsh1bh1ra9cckackrsbg828l1a54.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.509481379545-82cg2jtub6l5f8atdagkulqja18rp8v4</string>
+	<string>com.googleusercontent.apps.846213202035-c2najsh1bh1ra9cckackrsbg828l1a54</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAbOs3pp5RGO8dzie-fYpQb-4kW88L5pSU</string>
+	<string>AIzaSyBE0wmxGx5eK6q3H_ZFx7Fc0sOFBvCL31U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>509481379545</string>
+	<string>846213202035</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>org.covidactnow.mobile</string>
 	<key>PROJECT_ID</key>
-	<string>covid-projections</string>
+	<string>covid-actnow</string>
 	<key>STORAGE_BUCKET</key>
-	<string>covid-projections.appspot.com</string>
+	<string>covid-actnow.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:509481379545:ios:c91f79f7e89d10ed8b40c8</string>
+	<string>1:846213202035:ios:c018d54da023dd6feaaa06</string>
 	<key>DATABASE_URL</key>
-	<string>https://covid-projections.firebaseio.com</string>
+	<string>https://covid-actnow.firebaseio.com</string>
 </dict>
 </plist>

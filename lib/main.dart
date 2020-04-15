@@ -1,8 +1,14 @@
+import 'dart:async';
 import 'dart:convert';
 
+import 'package:covidactnow/messaging/message_stream.dart';
 import 'package:covidactnow/pages/view_faq.dart';
+import 'package:covidactnow/pages/view_region.dart';
 import 'package:covidactnow/pages/view_statelist.dart';
+import 'package:covidactnow/utils/utils.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
@@ -44,6 +50,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
+  StreamSubscription _pushNotificationSubscription;
 
   final String faqDataSourceURL =
       "https://abe-today.firebaseio.com/can/faq.json";
@@ -53,6 +60,50 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _fetchDataSource();
+    initDynamicLinks();
+
+    if (Utils.isMobile) {
+      _pushNotificationSubscription = MessageStream.listen(context);
+    }
+  }
+
+  @override
+  void dispose() {
+    _pushNotificationSubscription?.cancel();
+    super.dispose();
+  }
+
+  void handleDynamicLink(String path, Map<String, String> params) {
+    switch (path.toLowerCase()) {
+      case '/mobile':
+        Page_ViewRegion.navigateToPage(context, params['state']);
+        break;
+      default:
+        Navigator.pushNamed(context, path);
+        break;
+    }
+  }
+
+  Future<void> initDynamicLinks() async {
+    final PendingDynamicLinkData data =
+        await FirebaseDynamicLinks.instance.getInitialLink();
+    final Uri deepLink = data?.link;
+
+    if (deepLink != null) {
+      handleDynamicLink(deepLink.path, deepLink.queryParameters);
+    }
+
+    FirebaseDynamicLinks.instance.onLink(
+        onSuccess: (PendingDynamicLinkData dynamicLink) async {
+      final Uri deepLink = dynamicLink?.link;
+
+      if (deepLink != null) {
+        handleDynamicLink(deepLink.path, deepLink.queryParameters);
+      }
+    }, onError: (OnLinkErrorException e) async {
+      print('onLinkError');
+      print(e.message);
+    });
   }
 
   Future<void> _fetchDataSource() async {
@@ -71,6 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
     const drawerTilePadding = EdgeInsets.only(left: 30, bottom: 2, top: 2);
     final List<Widget> tabs = [Page_ViewStatelist(), Page_ViewFAQ(faqData)];
 
+    // get rid of status bar color on Android
+    SystemChrome.setSystemUIOverlayStyle(
+      Utils.systemUiStyle(context),
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -84,35 +140,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
             color: Colors.white,
             child: ListView(
-              padding: const EdgeInsets.only(top: 30),
               children: <Widget>[
                 ListTile(
+                  leading: Icon(Icons.launch),
                   contentPadding: drawerTilePadding,
-                  title: Row(children: <Widget>[
-                    Text('Endorsements  ', style: H2),
-                    Icon(Icons.launch)
-                  ]),
+                  title: Text('Endorsements  ', style: H2),
                   onTap: () {
+                    Navigator.of(context).pop();
                     launch("https://covidactnow.org/endorsements");
                   },
                 ),
                 ListTile(
+                  leading: Icon(Icons.launch),
                   contentPadding: drawerTilePadding,
-                  title: Row(children: <Widget>[
-                    Text('Announcements  ', style: H2),
-                    Icon(Icons.launch)
-                  ]),
+                  title: Text('Announcements  ', style: H2),
                   onTap: () {
+                    Navigator.of(context).pop();
                     launch("https://blog.covidactnow.org/");
                   },
                 ),
                 ListTile(
+                  leading: Icon(Icons.launch),
                   contentPadding: drawerTilePadding,
-                  title: Row(children: <Widget>[
-                    Text('Terms of Service  ', style: H2),
-                    Icon(Icons.launch)
-                  ]),
+                  title: Text('Terms of Service  ', style: H2),
                   onTap: () {
+                    Navigator.of(context).pop();
                     launch("https://covidactnow.org/terms");
                   },
                 ),

@@ -34,7 +34,7 @@ class Page_ViewStatelist extends StatelessWidget {
             child: DefaultTextStyle(
               style: GoogleFonts.roboto(
                 textStyle: P.merge(
-                  TextStyle(
+                  const TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -46,7 +46,7 @@ class Page_ViewStatelist extends StatelessWidget {
                       text: TextSpan(children: [
                     TextSpan(
                         text: "Act Now.",
-                        style: H1.merge(TextStyle(color: Colors.black))),
+                        style: H1.merge(const TextStyle(color: Colors.black))),
                     const TextSpan(text: "  "),
                     TextSpan(
                         text: "Save lives.",
@@ -70,24 +70,27 @@ class Page_ViewStatelist extends StatelessWidget {
             Navigator.push<void>(
               context,
               MaterialPageRoute(
-                  builder: (context) => Page_ViewRegion(
-                        stateAbbr: state["state_code"] as String,
-                      )),
+                builder: (context) => Page_ViewRegion(
+                  stateAbbr: state["state_code"] as String,
+                ),
+              ),
             );
           },
           title: Text("${state["state"]} (${state["state_code"]})",
-              style: TextStyle(color: Colors.black)),
+              style: const TextStyle(color: Colors.black)),
           subtitle: RichText(
-              text: TextSpan(
-                  style: TextStyle(color: ourDarkGrey),
-                  text: INTERVENTION_TITLES[
-                      STATE_INTERVENTION[state["state_code"]]],
-                  children: [
+            text: TextSpan(
+              style: const TextStyle(color: ourDarkGrey),
+              text:
+                  INTERVENTION_TITLES[STATE_INTERVENTION[state["state_code"]]],
+              children: [
                 TextSpan(text: " ● ", style: TextStyle(color: ourMediumGrey)),
                 TextSpan(
                     text:
                         "${_abbreviateInt(state["population"] as int)} residents")
-              ])),
+              ],
+            ),
+          ),
         );
       },
     );
